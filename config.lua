@@ -7,13 +7,13 @@ Config.ShowMechToolOption = true -- set to false if you dont use cw-mechtool
 Config.DoOffsetGps = true -- Set to true if you want the gps to slighlty offset the point (helps with route)
 Config.Inventory = 'qb' -- set to 'ox' if you want ox inventory support. Only 'ox' or 'qb' works.
 Config.UseRenewedCrypto = false -- set to true if you use Renewed crypto
-Config.UseRenewedBanking = false -- set this to true if you use Renewed Banking
+Config.UseRenewedBanking = true -- set this to true if you use Renewed Banking
 Config.UseNameValidation = true -- set to true if you use the name validation - HAVING THIS ON MEANS UNIQUE RACERNAMES
 Config.MaxRacerNames = 2 -- Maximum allowed amount of unique names per character
-Config.MaxCheckpoints = 60 -- This is just for the warning to show up. You can still go above it, but the script WILL crash clients if there's to many checkpoints. Test higher values at own risk.
+Config.MaxCheckpoints = 70 -- This is just for the warning to show up. You can still go above it, but the script WILL crash clients if there's to many checkpoints. Test higher values at own risk.
 Config.AllowCreateFromShare = true -- toggle this to allow using the share track creation
 Config.CheckDistance = true -- If enabled, distances to checkpoints are compared for position tracking (If you got alot of racers this might affect client performance)
-Config.UseOxLibForKeybind = false -- YOU HAVE TO ENABLE OXLIB IN FXMANIFEST TO USE THIS!!!!!!!!!!!!!!!!!!!!!!!!! Use oxlib for keybinds instead of natives.
+Config.UseOxLibForKeybind = true -- YOU HAVE TO ENABLE OXLIB IN FXMANIFEST TO USE THIS!!!!!!!!!!!!!!!!!!!!!!!!! Use oxlib for keybinds instead of natives.
 Config.TimeOutTimerInMinutes = 5 -- Default = 5 minutes
 Config.NotifyRacers = true -- set to true and anyone holding a racing gps will get a notification when races are hosted
 
@@ -188,8 +188,8 @@ Config.Options = {
         { value = 500, text = 500 },
         { value = 1000, text = 1000 }
     },
-    MoneyType = 'crypto', --Determines buyins and payouts. cash/bank/crypto
-    cryptoType = 'cdc' -- rname of your crypto
+    moneyType = 'cash', -- cash/bank/crypto
+    -- cryptoType = 'cdc', -- name of your crypto
 }
 
 Config.Trader = {
@@ -198,7 +198,7 @@ Config.Trader = {
     requireToken = false,
     model = 'csb_paige',
     animation = 'WORLD_HUMAN_SEAT_WALL_TABLET',
-    location = vector4(852.58, -1543.87, 29.12, 230.19),
+    location = vector4(1737.4908, 3326.4176, 40.377246, 188.69595),
     moneyType = 'cash', -- cash/bank/crypto
     -- cryptoType = 'cdc', -- name of your crypto
     racingUserCosts = {
@@ -216,9 +216,9 @@ Config.Laptop = {
     jobRequirement = { racer = true, creator = true, master = true, god = true }, -- Tied to Config.AllowedJobs
     requireToken = false, -- using cw tokens?
     model = 'xm_prop_x17_laptop_mrsr', -- entity model
-    location = vector4(938.56, -1549.8, 34.37, 163.59), -- world location
-    moneyType = 'crypto', -- cash/bank/crypto
-    cryptoType = 'cdc', -- name of your crypto
+    location = vector4(134.57154, -3012.541, 10.321366, 92.8215),
+    moneyType = 'cash', -- cash/bank/crypto
+    -- cryptoType = 'cdc', -- name of your crypto
     racingUserCosts = { -- cost of creating an account
         racer = 1000,
         creator = 5000,
@@ -277,23 +277,23 @@ Config.Buttons = {
 
 Config.AutomatedRaces = {
     {
-        trackId = 'LR-7666', -- TrackId. Found in your tracks in racingapp or in DB
-        laps = 2, -- Laps. 0 for sprint
+        trackId = 'LR-5932', -- TrackId. Found in your tracks in racingapp or in DB
+        laps = 3, -- Laps. 0 for sprint
         racerName = 'AutoMate', -- Name on the Automation
         maxClass = 'A', -- Max Class
-        ghostingEnabled = false, -- Use Ghosting
+        ghostingEnabled = true, -- Use Ghosting
         ghostingTime = 0, -- Ghosting Time
         buyIn = 2000, -- amount to participate
     },
-    -- {
-    --     trackId = 'LR-1575',
-    --     laps = 2,
-    --     racerName = 'AutoMate',
-    --     maxClass = 'A',
-    --     ghostingEnabled = false,
-    --     ghostingTime = 0,
-    --     buyIn = 2000,
-    -- }
+    {
+        trackId = 'LR-4705', -- TrackId. Found in your tracks in racingapp or in DB
+        laps = 2, -- Laps. 0 for sprint
+        racerName = 'AutoMate1', -- Name on the Automation
+        maxClass = 'A', -- Max Class
+        ghostingEnabled = true, -- Use Ghosting
+        ghostingTime = 0, -- Ghosting Time
+        buyIn = 2000, -- amount to participate
+    },
 }
 
 Config.AutomatedOptions = {
